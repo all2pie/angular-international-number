@@ -11,6 +11,15 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
+    "paths": {
+      "ngx-international-number": [
+        "dist/ngx-international-number/ngx-international-number",
+        "dist/ngx-international-number"
+      ],
+      "libphonenumber-js": [
+        "./node_modules/libphonenumber-js"
+      ]
+    },
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,

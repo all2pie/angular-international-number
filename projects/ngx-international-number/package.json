@@ -1,0 +1,28 @@
+{
+  "name": "ngx-international-number",
+  "version": "0.1.0",
+  "author": "Muhammad Haris",
+  "description": "International Phone Number Validation for Angular using Directive",
+  "keywords": [
+    "Angular",
+    "Phone Number",
+    "International",
+    "Validation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^12.1.0",
+    "@angular/core": "^12.1.0",
+    "libphonenumber-js": "^1.9.23"
+  },
+  "dependencies": {
+    "tslib": "^2.2.0"
+  },
+  "devDependencies": {
+    "libphonenumber-js": "^1.9.23"
+  }
+}

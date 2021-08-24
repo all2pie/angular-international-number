@@ -1,27 +1,36 @@
-# AngularInternationalPhoneNumber
+# Intro
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
+This library is for International Phone Number Validation for Angular using Directive.
+It supports both Template driven and Reactive Forms.
 
-## Development server
+[libphonenumber-js](https://www.npmjs.com/package/libphonenumber-js) is used for the Phone Number validation.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Usage
 
-## Code scaffolding
+1. **npm i ngx-international-number**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. Add **InternationalPhoneModule** import to your **AppModule** like this:
 
-## Build
+   ```ts
+   import { NgxInternationalNumberModule } from "ngx-international-number";
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+   @NgModule({
+     imports: [NgxInternationalNumberModule],
+   })
+   export class AppModule {}
+   ```
 
-## Running unit tests
+3. Add the Directive to you Phone Number Input like this:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   ```ts
+   <input
+    type="tel"
+    formControlName="phoneNumber"
+    international-number
+    defaultCountry="PK"
+    (countrySelected)="countryChanged($event)"/>
+   ```
 
-## Running end-to-end tests
+## Sources
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The Countries Data was copied form this [Github Repo](https://github.com/LucianoGanga/country-codes-list/blob/master/countriesData.js).

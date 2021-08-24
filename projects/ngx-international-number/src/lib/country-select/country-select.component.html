@@ -1,0 +1,34 @@
+<div class="country-select">
+  <div class="country-select-btn" (click)="showList = !showList">
+    <span *ngIf="selectedCountry">{{ selectedCountry?.flag }}</span>
+    <span *ngIf="!selectedCountry" class="placeholder-flag"></span>
+    <span class="arrow" [ngClass]="{ 'arrow-up': showList }"></span>
+  </div>
+
+  <div class="dropdown" *ngIf="showList">
+    <input
+      type="search"
+      class="search"
+      placeholder="Search Country"
+      [ngModel]="search"
+      (ngModelChange)="filterCountries($event)"
+    />
+    <ul class="countries-list">
+      <li
+        *ngFor="let country of countries"
+        (click)="setCountry(country.countryCode, country)"
+      >
+        <span style="margin-right: 6px">{{ country.flag }}</span>
+        <span>{{ country.countryNameEn }} </span>
+        <span
+          style="margin-left: 4px"
+          *ngIf="country.countryNameEn !== country.countryNameLocal"
+        >
+          ({{ country.countryNameLocal }})</span
+        >
+      </li>
+    </ul>
+  </div>
+
+  <ng-content></ng-content>
+</div>

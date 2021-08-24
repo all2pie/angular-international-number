@@ -1,0 +1,12 @@
+<h1>Demo</h1>
+
+<form [formGroup]="fg">
+  <h2>Is Form Valid?: {{ fg?.valid }}</h2>
+  <input
+    type="tel"
+    formControlName="phoneNumber"
+    international-number
+    defaultCountry="PK"
+    (countrySelected)="countryChanged($event)"
+  />
+</form>
