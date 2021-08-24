@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/"
+    "url": "https://github.com/all2pie/angular-international-number"
   },
   "license": "MIT",
   "peerDependencies": {
