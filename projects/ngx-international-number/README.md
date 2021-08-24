@@ -1,24 +1,36 @@
-# NgxInternationalNumber
+# Intro
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0.
+This library is for International Phone Number Validation for Angular using Directive.
+It supports both Template driven and Reactive Forms.
 
-## Code scaffolding
+[libphonenumber-js](https://www.npmjs.com/package/libphonenumber-js) is used for the Phone Number validation.
 
-Run `ng generate component component-name --project ngx-international-number` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-international-number`.
-> Note: Don't forget to add `--project ngx-international-number` or else it will be added to the default project in your `angular.json` file. 
+## Usage
 
-## Build
+1. **npm i ngx-international-number**
 
-Run `ng build ngx-international-number` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Add **InternationalPhoneModule** import to your **AppModule** like this:
 
-## Publishing
+   ```ts
+   import { NgxInternationalNumberModule } from "ngx-international-number";
 
-After building your library with `ng build ngx-international-number`, go to the dist folder `cd dist/ngx-international-number` and run `npm publish`.
+   @NgModule({
+     imports: [NgxInternationalNumberModule],
+   })
+   export class AppModule {}
+   ```
 
-## Running unit tests
+3. Add the Directive to you Phone Number Input like this:
 
-Run `ng test ngx-international-number` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   ```ts
+   <input
+    type="tel"
+    formControlName="phoneNumber"
+    international-number
+    defaultCountry="PK"
+    (countrySelected)="countryChanged($event)"/>
+   ```
 
-## Further help
+## Sources
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The Countries Data was copied form this [Github Repo](https://github.com/LucianoGanga/country-codes-list/blob/master/countriesData.js).
