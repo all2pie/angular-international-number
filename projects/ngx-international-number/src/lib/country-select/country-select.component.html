@@ -13,11 +13,13 @@
       placeholder="Search Country"
       [ngModel]="search"
       (ngModelChange)="filterCountries($event)"
+      autofocus
     />
     <ul class="countries-list">
       <li
-        *ngFor="let country of countries"
+        *ngFor="let country of countries; let i = index"
         (click)="setCountry(country.countryCode, country)"
+        [tabindex]="i + 1"
       >
         <span class="flag">{{ country.flag }}</span>
         <span>{{ country.countryNameEn }} </span>

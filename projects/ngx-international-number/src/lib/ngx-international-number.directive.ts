@@ -24,6 +24,7 @@ export class InternationalNumberDirective implements Validator, OnInit {
   @Input('defaultCountry') defaultCountry?: CountryCode;
   @Output() countrySelected = new EventEmitter<Country>();
   private countrySelectComponent: CountrySelectComponent;
+  private control?: AbstractControl;
 
   constructor(
     inputRef: ElementRef,
@@ -51,6 +52,9 @@ export class InternationalNumberDirective implements Validator, OnInit {
     ) => {
       const selectedCountry = setCountryFunction(code, country);
       this.countrySelected.emit(selectedCountry);
+      if (this.control) {
+        this.control.updateValueAndValidity();
+      }
       return selectedCountry;
     };
   }
@@ -62,6 +66,7 @@ export class InternationalNumberDirective implements Validator, OnInit {
   }
 
   validate(control: AbstractControl) {
+    this.control = control;
     const validationError = { invalidPhoneNumber: true };
 
     if (!control.value) {
