@@ -4,8 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve demo",
-    "build": "ng build ngx-international-number --watch ",
-    "watch": "ng build --watch --configuration development",
+    "watch": "ng build ngx-international-number --watch ",
+    "build": "ng build ngx-international-number",
+    "deploy": "ng deploy --repo=https://github.com/all2pie/angular-international-number.git",
     "test": "ng test"
   },
   "private": true,
@@ -29,6 +30,7 @@
     "@angular/compiler-cli": "~12.1.0",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
+    "angular-cli-ghpages": "^1.0.0-rc.2",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",

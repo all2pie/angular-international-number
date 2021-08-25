@@ -5,6 +5,8 @@ It supports both Template driven and Reactive Forms.
 
 [libphonenumber-js](https://www.npmjs.com/package/libphonenumber-js) is used for the Phone Number validation.
 
+[Demo](https://all2pie.github.io/angular-international-number/)
+
 ## Usage
 
 1. `npm i ngx-international-number`
