@@ -69,6 +69,14 @@
         &:focus {
           background-color: #eef4fb;
         }
+
+        .flag {
+          margin-inline-end: 6px;
+        }
+
+        .local-name {
+          margin-inline-start: 4px;
+        }
       }
 
       &::-webkit-scrollbar {
@@ -91,7 +99,7 @@
   }
 
   .arrow {
-    margin-left: 6px;
+    margin-inline-start: 6px;
     width: 0;
     height: 0;
     border-left: 3px solid transparent;
