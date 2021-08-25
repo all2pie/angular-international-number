@@ -24,6 +24,7 @@
   .dropdown {
     z-index: 15;
     background: white;
+    border: 1px solid #e6f2ff;
     position: absolute;
     width: max-content;
     top: 100%;
@@ -64,7 +65,8 @@
         align-items: center;
         // justify-content: center;
 
-        &:hover {
+        &:hover,
+        &:focus {
           background-color: #eef4fb;
         }
       }

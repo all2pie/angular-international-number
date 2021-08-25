@@ -9,6 +9,7 @@
     <input
       type="search"
       class="search"
+      autocomplete="off"
       placeholder="Search Country"
       [ngModel]="search"
       (ngModelChange)="filterCountries($event)"
@@ -22,7 +23,10 @@
         <span>{{ country.countryNameEn }} </span>
         <span
           style="margin-left: 4px"
-          *ngIf="country.countryNameEn !== country.countryNameLocal"
+          *ngIf="
+            country.countryNameLocal &&
+            country.countryNameEn !== country.countryNameLocal
+          "
         >
           ({{ country.countryNameLocal }})</span
         >
