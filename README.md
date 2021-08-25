@@ -7,9 +7,9 @@ It supports both Template driven and Reactive Forms.
 
 ## Usage
 
-1. **npm i ngx-international-number**
+1. `npm i ngx-international-number`
 
-2. Add **InternationalPhoneModule** import to your **AppModule** like this:
+2. Add **InternationalPhoneModule** import to your **NgModule** (where the directive is used) like this:
 
    ```ts
    import { NgxInternationalNumberModule } from "ngx-international-number";
@@ -17,7 +17,7 @@ It supports both Template driven and Reactive Forms.
    @NgModule({
      imports: [NgxInternationalNumberModule],
    })
-   export class AppModule {}
+   export class AuthModule {}
    ```
 
 3. Add the Directive to you Phone Number Input like this:
