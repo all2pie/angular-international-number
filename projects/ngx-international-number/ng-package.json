@@ -6,5 +6,6 @@
     "umdModuleIds": {
       "libphonenumber-js": "libphonenumber-js"
     }
-  }
+  },
+  "whitelistedNonPeerDependencies": ["libphonenumber-js"]
 }

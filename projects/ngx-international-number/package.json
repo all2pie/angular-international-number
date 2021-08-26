@@ -1,6 +1,6 @@
 {
   "name": "ngx-international-number",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "author": "Muhammad Haris",
   "description": "International Phone Number Validation for Angular using Directive",
   "keywords": [
@@ -19,7 +19,9 @@
     "@angular/core": "^12.1.0",
     "libphonenumber-js": "^1.9.23"
   },
-  "dependencies": {},
+  "dependencies": {
+    "libphonenumber-js": "^1.9.23"
+  },
   "devDependencies": {
     "libphonenumber-js": "^1.9.23"
   }
