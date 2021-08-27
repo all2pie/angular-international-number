@@ -80,7 +80,6 @@
         padding: 14px 12px;
 
         display: flex;
-        flex-flow: row wrap;
         align-items: center;
 
         &:hover,
@@ -89,7 +88,7 @@
         }
 
         .flag {
-          margin-inline-end: 6px;
+          margin-inline-end: 12px;
           width: 32px;
         }
 
