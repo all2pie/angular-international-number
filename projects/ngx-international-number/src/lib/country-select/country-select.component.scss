@@ -9,6 +9,7 @@
     padding-inline-end: 4px;
     top: 0;
     bottom: 0;
+    cursor: pointer;
 
     // &:hover {
     //   background-color: #f2f2f2;
@@ -19,6 +20,24 @@
       height: 15px;
       background-color: #dbdbdb;
     }
+
+    .flag {
+      width: 20px;
+    }
+
+    .arrow {
+      padding-inline-start: 6px;
+      font-size: 14px;
+      // height: 0;
+      // border-left: 3px solid transparent;
+      // border-right: 3px solid transparent;
+      // border-top: 4px solid #555;
+    }
+
+    // .arrow-up {
+    //   border-top: none;
+    //   border-bottom: 4px solid #555;
+    // }
   }
 
   .dropdown {
@@ -71,6 +90,7 @@
 
         .flag {
           margin-inline-end: 6px;
+          width: 32px;
         }
 
         .local-name {
@@ -94,21 +114,7 @@
   }
 
   > input {
-    padding-inline-start: 48px !important; // Left Padding (12px) + Flag (20px) + Margin (6px) + Arrow (6px) + Right Padding (4px)
-  }
-
-  .arrow {
-    margin-inline-start: 6px;
-    width: 0;
-    height: 0;
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;
-    border-top: 4px solid #555;
-  }
-
-  .arrow-up {
-    border-top: none;
-    border-bottom: 4px solid #555;
+    padding-inline-start: 56px !important; // Left Padding (12px) + Flag (20px) + Margin (6px) + Arrow (14px) + Right Padding (4px)
   }
 }
 

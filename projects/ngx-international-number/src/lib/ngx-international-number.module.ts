@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NG_VALIDATORS } from '@angular/forms';
 import { CountrySelectComponent } from './country-select/country-select.component';
 import { InternationalNumberDirective } from './ngx-international-number.directive';
 

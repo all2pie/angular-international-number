@@ -1,8 +1,15 @@
 <div class="country-select">
   <div class="country-select-btn" (click)="showList = !showList">
-    <span *ngIf="selectedCountry">{{ selectedCountry?.flag }}</span>
+    <img
+      class="flag"
+      *ngIf="selectedCountry"
+      src="http://purecatamphetamine.github.io/country-flag-icons/3x2/{{
+        selectedCountry.code
+      }}.svg"
+      alt="Flag Icon"
+    />
     <span *ngIf="!selectedCountry" class="placeholder-flag"></span>
-    <span class="arrow" [ngClass]="{ 'arrow-up': showList }"></span>
+    <span class="arrow">{{ showList ? "▲" : "▼" }}</span>
   </div>
 
   <div class="dropdown" *ngIf="showList">
@@ -18,20 +25,17 @@
     <ul class="countries-list">
       <li
         *ngFor="let country of countries; let i = index"
-        (click)="setCountry(country.countryCode, country)"
+        (click)="setCountry(country.code, country)"
         [tabindex]="i + 1"
       >
-        <span class="flag">{{ country.flag }}</span>
-        <span>{{ country.countryNameEn }} </span>
-        <span
-          class="local-name"
-          *ngIf="
-            country.countryNameLocal &&
-            country.countryNameEn !== country.countryNameLocal
-          "
-        >
-          ({{ country.countryNameLocal }})</span
-        >
+        <img
+          class="flag"
+          src="http://purecatamphetamine.github.io/country-flag-icons/3x2/{{
+            country.code
+          }}.svg"
+          alt="Flag Icon"
+        />
+        <span>{{ country.name }} </span>
       </li>
     </ul>
   </div>

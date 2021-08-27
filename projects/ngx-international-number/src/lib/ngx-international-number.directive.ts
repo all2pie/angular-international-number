@@ -53,7 +53,7 @@ export class InternationalNumberDirective implements Validator, OnInit {
       const selectedCountry = setCountryFunction(code, country);
       this.countrySelected.emit(selectedCountry);
       if (this.control) {
-        this.control.updateValueAndValidity();
+        this.control?.updateValueAndValidity();
       }
       return selectedCountry;
     };
@@ -67,6 +67,7 @@ export class InternationalNumberDirective implements Validator, OnInit {
 
   validate(control: AbstractControl) {
     this.control = control;
+
     const validationError = { invalidPhoneNumber: true };
 
     if (!control.value) {
@@ -76,15 +77,18 @@ export class InternationalNumberDirective implements Validator, OnInit {
     try {
       const number = parsePhoneNumber(
         control.value,
-        this.countrySelectComponent.selectedCountry?.countryCode
+        this.countrySelectComponent.selectedCountry?.code
       );
 
       if (
         number.country &&
-        this.countrySelectComponent.selectedCountry?.countryCode !==
-          number.country
+        this.countrySelectComponent.selectedCountry?.code !== number.country
       ) {
         this.countrySelectComponent.setCountry(number.country);
+      }
+
+      if (number.number) {
+        control.setValue(number.number);
       }
 
       if (!number.isValid()) {

@@ -7,5 +7,5 @@
       "libphonenumber-js": "libphonenumber-js"
     }
   },
-  "whitelistedNonPeerDependencies": ["libphonenumber-js"]
+  "allowedNonPeerDependencies": ["libphonenumber-js"]
 }

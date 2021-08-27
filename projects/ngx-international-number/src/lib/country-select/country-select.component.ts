@@ -28,7 +28,7 @@ export class CountrySelectComponent implements OnInit {
 
   setCountry(code: CountryCode, country?: Country) {
     if (!country) {
-      country = this.countries.find((country) => country.countryCode === code);
+      country = this.countries.find((country) => country.code === code);
     }
     this.selectedCountry = country;
     this.countries = countries;
@@ -52,10 +52,8 @@ export class CountrySelectComponent implements OnInit {
 
     search = search.toLowerCase();
 
-    this.countries = countries.filter(
-      (country) =>
-        country.countryNameEn.toLowerCase().includes(search) ||
-        country.countryNameLocal.toLowerCase().includes(search)
+    this.countries = countries.filter((country) =>
+      country.name.toLowerCase().includes(search)
     );
   }
 }
