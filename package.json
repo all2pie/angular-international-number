@@ -6,7 +6,7 @@
     "start": "ng serve demo",
     "watch": "ng build ngx-international-number --watch ",
     "build": "ng build ngx-international-number",
-    "deploy": "ng deploy --repo=https://github.com/all2pie/angular-international-number.git",
+    "deploy": "ng deploy --base-href=/angular-international-number/",
     "test": "ng test"
   },
   "private": true,
