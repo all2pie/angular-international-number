@@ -21,7 +21,8 @@ import { Country } from './country-data';
   ],
 })
 export class InternationalNumberDirective implements Validator, OnInit {
-  @Input('defaultCountry') defaultCountry?: CountryCode;
+  @Input() defaultCountry?: CountryCode;
+  @Input() searchPlaceHolder?: string;
   @Output() countrySelected = new EventEmitter<Country>();
   private countrySelectComponent: CountrySelectComponent;
   private control?: AbstractControl;
@@ -60,6 +61,8 @@ export class InternationalNumberDirective implements Validator, OnInit {
   }
 
   ngOnInit() {
+    this.countrySelectComponent.searchPlaceHolder = this.searchPlaceHolder;
+
     if (this.defaultCountry) {
       this.countrySelectComponent.setCountry(this.defaultCountry);
     }

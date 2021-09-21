@@ -7,7 +7,7 @@ It supports both Template driven and Reactive Forms.
 
 [Demo](https://all2pie.github.io/angular-international-number/)
 
-## Usage
+# Usage
 
 1. `npm i ngx-international-number`
 
@@ -33,6 +33,20 @@ It supports both Template driven and Reactive Forms.
     (countrySelected)="countryChanged($event)"/>
    ```
 
-## Sources
+
+
+## Inputs
+
+| Name              | Type                           | Default                        | Description                                                                             
+| ----------------- | ------------------------------ | ------------------------------ | ------------------------------------------------------------------------ |
+| defaultCountry    | string                         | null                           | [Alpha 2 Country Code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) |
+| searchPlaceHolder | string                         | null                           | The Placeholder for the search input                                     |
+
+## Outputs
+
+| Name              | Parameters                     | Description                                                                             
+| ----------------- | ------------------------------ | ---------------------------------------------------------------------------------- |
+| countrySelected   | country: Country               | Emits whenever there is a change in country selected including the default country |
+# Sources
 Flags used are from this [Package](https://www.npmjs.com/package/country-flag-icons)
 The Countries Data was copied form this [Github Repo](https://gist.github.com/keeguon/2310008).

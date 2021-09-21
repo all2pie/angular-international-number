@@ -21,6 +21,7 @@ export class CountrySelectComponent implements OnInit {
   public showList = false;
   public countries = countries;
   public search = '';
+  public searchPlaceHolder?: string;
 
   constructor(private ref: ElementRef) {}
 

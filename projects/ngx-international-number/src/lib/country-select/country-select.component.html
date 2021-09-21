@@ -17,7 +17,7 @@
       type="search"
       class="search"
       autocomplete="off"
-      placeholder="Search Country"
+      [placeholder]="searchPlaceHolder || 'Search Country'"
       [ngModel]="search"
       (ngModelChange)="filterCountries($event)"
       autofocus
