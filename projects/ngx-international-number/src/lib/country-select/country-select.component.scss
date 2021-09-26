@@ -42,12 +42,17 @@
   }
 
   .dropdown {
+    display: none;
     z-index: 15;
     background: white;
     border: 1px solid #e6f2ff;
     position: absolute;
     max-width: 100vw;
     top: 100%;
+
+    &.show {
+      display: block;
+    }
 
     .search {
       width: calc(100% - 24px);

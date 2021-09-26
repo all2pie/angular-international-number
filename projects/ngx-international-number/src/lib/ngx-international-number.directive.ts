@@ -24,8 +24,9 @@ export class InternationalNumberDirective implements Validator, OnInit {
   @Input() defaultCountry?: CountryCode;
   @Input() searchPlaceHolder?: string;
   @Output() countrySelected = new EventEmitter<Country>();
+  @Output() dropdownOpened = new EventEmitter<Boolean>();
   private countrySelectComponent: CountrySelectComponent;
-  private control?: AbstractControl;
+  public control?: AbstractControl;
 
   constructor(
     inputRef: ElementRef,
@@ -43,21 +44,7 @@ export class InternationalNumberDirective implements Validator, OnInit {
       [[inputRef.nativeElement]]
     ).instance;
 
-    const setCountryFunction = this.countrySelectComponent.setCountry.bind(
-      this.countrySelectComponent
-    );
-
-    this.countrySelectComponent.setCountry = (
-      code: CountryCode,
-      country?: Country
-    ) => {
-      const selectedCountry = setCountryFunction(code, country);
-      this.countrySelected.emit(selectedCountry);
-      if (this.control) {
-        this.control?.updateValueAndValidity();
-      }
-      return selectedCountry;
-    };
+    this.countrySelectComponent.directiveRef = this;
   }
 
   ngOnInit() {

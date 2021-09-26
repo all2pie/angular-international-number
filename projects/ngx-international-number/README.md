@@ -47,6 +47,8 @@ It supports both Template driven and Reactive Forms.
 | Name              | Parameters                     | Description                                                                             
 | ----------------- | ------------------------------ | ---------------------------------------------------------------------------------- |
 | countrySelected   | country: Country               | Emits whenever there is a change in country selected including the default country |
+| dropdownOpened    | didOpen: boolean               | Emits whenever dropdown is toggled                                                 |
 # Sources
 Flags used are from this [Package](https://www.npmjs.com/package/country-flag-icons)
-The Countries Data was copied form this [Github Repo](https://gist.github.com/keeguon/2310008).
+
+The Countries Data was copied form this [Github Repo](https://gist.github.com/keeguon/2310008)

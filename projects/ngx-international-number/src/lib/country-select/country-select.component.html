@@ -1,5 +1,5 @@
 <div class="country-select">
-  <div class="country-select-btn" (click)="showList = !showList">
+  <div class="country-select-btn" (click)="toggleDropdown()">
     <img
       class="flag"
       *ngIf="selectedCountry"
@@ -12,7 +12,7 @@
     <span class="arrow">{{ showList ? "▲" : "▼" }}</span>
   </div>
 
-  <div class="dropdown" *ngIf="showList">
+  <div class="dropdown" [ngClass]="{ show: showList }">
     <input
       type="search"
       class="search"

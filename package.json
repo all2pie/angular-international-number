@@ -6,6 +6,7 @@
     "start": "ng serve demo",
     "watch": "ng build ngx-international-number --watch ",
     "build": "ng build ngx-international-number",
+    "publish": "npm run build && cd dist/ngx-international-number/ && npm publish",
     "deploy": "ng deploy --base-href=/angular-international-number/",
     "test": "ng test"
   },

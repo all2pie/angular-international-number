@@ -6,6 +6,7 @@ import {
 } from '@angular/core';
 import { countries, Country } from '../country-data';
 import { CountryCode } from 'libphonenumber-js';
+import { InternationalNumberDirective } from '../ngx-international-number.directive';
 
 @Component({
   selector: 'app-country-select',
@@ -23,6 +24,8 @@ export class CountrySelectComponent implements OnInit {
   public search = '';
   public searchPlaceHolder?: string;
 
+  public directiveRef?: InternationalNumberDirective;
+
   constructor(private ref: ElementRef) {}
 
   ngOnInit(): void {}
@@ -35,6 +38,9 @@ export class CountrySelectComponent implements OnInit {
     this.countries = countries;
     this.showList = false;
 
+    this.directiveRef?.countrySelected.emit(country);
+    this.directiveRef?.control?.updateValueAndValidity();
+
     return country;
   }
 
@@ -43,6 +49,11 @@ export class CountrySelectComponent implements OnInit {
     if (!this.ref.nativeElement.contains(event.target)) {
       this.showList = false;
     }
+  }
+
+  toggleDropdown() {
+    this.showList = !this.showList;
+    this.directiveRef?.dropdownOpened.emit(this.showList);
   }
 
   filterCountries(search: string) {
