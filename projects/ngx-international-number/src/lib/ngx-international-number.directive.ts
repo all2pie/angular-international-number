@@ -5,7 +5,7 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 import { Directive, ElementRef, Input, OnInit } from '@angular/core';
-import { CountryCode, parsePhoneNumber } from 'libphonenumber-js';
+import { CountryCode, parsePhoneNumber } from 'libphonenumber-js/mobile';
 import { AbstractControl, NG_VALIDATORS, Validator } from '@angular/forms';
 import { CountrySelectComponent } from './country-select/country-select.component';
 import { Country } from './country-data';
@@ -77,7 +77,7 @@ export class InternationalNumberDirective implements Validator, OnInit {
         this.countrySelectComponent.setCountry(number.country);
       }
 
-      if (number.number) {
+      if (number.number && control.value !== number.number) {
         control.setValue(number.number);
       }
 
