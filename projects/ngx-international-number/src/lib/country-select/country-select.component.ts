@@ -20,6 +20,7 @@ import { InternationalNumberDirective } from '../ngx-international-number.direct
 export class CountrySelectComponent implements OnInit {
   public selectedCountry?: Country;
   public showList = false;
+  public customScrollbar = true;
   public countries = countries;
   public search = '';
   public searchPlaceHolder?: string;

@@ -33,22 +33,28 @@ It supports both Template driven and Reactive Forms.
     (countrySelected)="countryChanged($event)"/>
    ```
 
-
-
 ## Inputs
 
-| Name              | Type                           | Default                        | Description                                                                             
-| ----------------- | ------------------------------ | ------------------------------ | ------------------------------------------------------------------------ |
-| defaultCountry    | string                         | null                           | [Alpha 2 Country Code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) |
-| searchPlaceHolder | string                         | null                           | The Placeholder for the search input                                     |
+| Name              | Type                           | Default                        | Description
+| ----------------- | ------------------------------ | ------------------------------ | --------------------------------------------------------------------------------------------- |
+| searchPlaceHolder | string?                        | null                           | The Placeholder for the search input                                                          |
+| defaultCountry    | string?                        | null                           | [Alpha 2 Country Code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)                      |
+| hue               | string?                        | 212                            | [HSL color](https://www.w3schools.com/colors/colors_hsl.asp) Hue value for customizing theme  |
+| customScrollbar   | boolean?                       | true                           | Use false to disable theming for scrollbar                                                    |
 
 ## Outputs
 
-| Name              | Parameters                     | Description                                                                             
+| Name              | Parameters                     | Description
 | ----------------- | ------------------------------ | ---------------------------------------------------------------------------------- |
 | countrySelected   | country: Country               | Emits whenever there is a change in country selected including the default country |
 | dropdownOpened    | didOpen: boolean               | Emits whenever dropdown is toggled                                                 |
+
+## Styling
+
+* `dropdown-open` class is added on the root element of country select when dropdown is open for custom styling
+
 # Sources
+
 Flags used are from this [Package](https://www.npmjs.com/package/country-flag-icons)
 
 The Countries Data was copied form this [Github Repo](https://gist.github.com/keeguon/2310008)

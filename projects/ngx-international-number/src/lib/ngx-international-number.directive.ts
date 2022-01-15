@@ -23,6 +23,8 @@ import { Country } from './country-data';
 export class InternationalNumberDirective implements Validator, OnInit {
   @Input() defaultCountry?: CountryCode;
   @Input() searchPlaceHolder?: string;
+  @Input() customScrollbar: boolean = true;
+  @Input() hue?: string;
   @Output() countrySelected = new EventEmitter<Country>();
   @Output() dropdownOpened = new EventEmitter<Boolean>();
   private countrySelectComponent: CountrySelectComponent;
@@ -49,6 +51,12 @@ export class InternationalNumberDirective implements Validator, OnInit {
 
   ngOnInit() {
     this.countrySelectComponent.searchPlaceHolder = this.searchPlaceHolder;
+
+    this.countrySelectComponent.customScrollbar = this.customScrollbar;
+
+    if (this.hue) {
+      document.documentElement.style.setProperty('--hue', this.hue);
+    }
 
     if (this.defaultCountry) {
       this.countrySelectComponent.setCountry(this.defaultCountry);

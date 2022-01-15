@@ -1,4 +1,4 @@
-<div class="country-select">
+<div class="country-select" [ngClass]="{ 'dropdown-open': showList }">
   <div class="country-select-btn" (click)="toggleDropdown()">
     <img
       class="flag"
@@ -22,7 +22,10 @@
       (ngModelChange)="filterCountries($event)"
       autofocus
     />
-    <ul class="countries-list">
+    <ul
+      class="countries-list"
+      [ngClass]="{ 'custom-scrollbar': customScrollbar }"
+    >
       <li
         *ngFor="let country of countries; let i = index"
         (click)="setCountry(country.code, country)"

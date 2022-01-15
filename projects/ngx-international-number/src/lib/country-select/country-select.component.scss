@@ -1,3 +1,9 @@
+:root {
+  --hue: 212;
+}
+
+$hue: var(--hue);
+
 .country-select {
   position: relative;
 
@@ -45,7 +51,7 @@
     display: none;
     z-index: 15;
     background: white;
-    border: 1px solid #e6f2ff;
+    border: 1px solid hsl($hue, 100%, 95%);
     position: absolute;
     max-width: 100vw;
     top: 100%;
@@ -58,8 +64,8 @@
       width: calc(100% - 24px);
       margin: 12px;
       font-size: 14px;
-      background: #e6f2ff;
-      // border: 1px solid #e6f2ff;
+      background: hsl($hue, 100%, 95%);
+      // border: 1px solid hsl($hue, 100%, 95%);
       border: none;
       padding: 4px 12px;
       outline: none;
@@ -74,8 +80,8 @@
     .countries-list {
       max-height: 300px;
       z-index: 5;
-      border: 1px solid #e6f2ff;
-      box-shadow: 0px 8px 21px 0px rgba(188, 203, 222, 0.75);
+      border: 1px solid hsl($hue, 100%, 95%);
+      box-shadow: 0px 8px 21px 0px hsla($hue, 34%, 80%, 0.75);
       overflow-y: scroll;
       list-style: none;
       padding: 0;
@@ -90,7 +96,7 @@
 
         &:hover,
         &:focus {
-          background-color: #eef4fb;
+          background-color: hsl($hue, 62%, 96%);
         }
 
         .flag {
@@ -103,17 +109,17 @@
         }
       }
 
-      &::-webkit-scrollbar {
-        width: auto;
-      }
-      &::-webkit-scrollbar-thumb {
-        background: #8eaac9;
-        border-radius: 4px;
-      }
-      // &::-webkit-scrollbar-button {
-      // }
-      &::-webkit-scrollbar-track {
-        background: #f3f9ff;
+      &.custom-scrollbar {
+        &::-webkit-scrollbar {
+          width: auto;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: hsl($hue, 35%, 67%);
+          border-radius: 4px;
+        }
+        &::-webkit-scrollbar-track {
+          background: hsl($hue, 100%, 98%);
+        }
       }
     }
   }
