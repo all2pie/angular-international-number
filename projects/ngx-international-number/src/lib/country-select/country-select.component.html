@@ -30,6 +30,7 @@
         *ngFor="let country of countries; let i = index"
         (click)="setCountry(country.code, country)"
         [tabindex]="i + 1"
+        [ngClass]="{ selected: selectedCountry === country }"
       >
         <img
           class="flag"

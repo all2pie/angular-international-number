@@ -12,28 +12,29 @@ $hue: var(--hue);
     align-items: center;
     position: absolute;
     padding-inline-start: 12px;
-    padding-inline-end: 4px;
+    padding-inline-end: 6px;
     top: 0;
     bottom: 0;
     cursor: pointer;
+    backdrop-filter: contrast(0.9);
 
     // &:hover {
     //   background-color: #f2f2f2;
     // }
 
     .placeholder-flag {
-      width: 20px;
+      width: 24px;
       height: 15px;
       background-color: #dbdbdb;
     }
 
     .flag {
-      width: 20px;
+      width: 24px;
     }
 
     .arrow {
-      padding-inline-start: 6px;
-      font-size: 10px;
+      padding-inline-start: 8px;
+      font-size: 12px;
       color: gray;
       // height: 0;
       // border-left: 3px solid transparent;
@@ -95,7 +96,7 @@ $hue: var(--hue);
         align-items: center;
 
         &:hover,
-        &:focus {
+        &.selected {
           background-color: hsl($hue, 62%, 96%);
         }
 
@@ -125,7 +126,7 @@ $hue: var(--hue);
   }
 
   > input {
-    padding-inline-start: 52px !important; // Left Padding (12px) + Flag (20px) + Margin (6px) + Arrow (10px) + Right Padding (4px)
+    padding-inline-start: 66px !important; // Left Padding (12px) + Flag (24px) + Margin (8px) + Arrow (12px) + Right Padding (6px) + 4px Buffer
   }
 }
 

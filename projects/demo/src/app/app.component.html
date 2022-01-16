@@ -1,14 +1,24 @@
-<h1>Demo</h1>
+<div class="container">
+  <h1>DEMO</h1>
 
-<form [formGroup]="fg">
-  <h2>Is Form Valid?: {{ fg?.valid }}</h2>
-  <input
-    type="tel"
-    formControlName="phoneNumber"
-    international-number
-    defaultCountry="PK"
-    (countrySelected)="countryChanged($event)"
-  />
+  <h3>ngx-international-number</h3>
 
-  <p>Value: {{ fg.value | json }}</p>
-</form>
+  <form [formGroup]="fg">
+    <input
+      type="tel"
+      formControlName="phoneNumber"
+      international-number
+      defaultCountry="PK"
+      placeholder="+923114444444"
+      (countrySelected)="countryChanged($event)"
+    />
+
+    <code>
+      Value: {{ fg.value | json }} <br />
+      Is Form Valid?:
+      <span [ngStyle]="{ color: fg?.valid ? 'green' : 'red' }">{{
+        fg?.valid
+      }}</span>
+    </code>
+  </form>
+</div>
