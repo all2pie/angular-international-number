@@ -19,10 +19,12 @@ import { InternationalNumberDirective } from '../ngx-international-number.direct
 })
 export class CountrySelectComponent implements OnInit {
   public selectedCountry?: Country;
-  public showList = false;
-  public customScrollbar = true;
-  public countries = countries;
-  public search = '';
+  public showList: boolean = false;
+  public customScrollbar: boolean = true;
+  private _countries: Country[] = countries;
+  public countryCodesFilter: CountryCode[] = [];
+  public search: string = '';
+  public searchable?: boolean;
   public searchPlaceHolder?: string;
 
   public directiveRef?: InternationalNumberDirective;
@@ -31,9 +33,22 @@ export class CountrySelectComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  set countries(countriesList: Country[]) {
+    this._countries = countriesList;
+  }
+
+  get countries(): Country[] {
+    if (this.countryCodesFilter.length) {
+      return this._countries.filter((country) =>
+        this.countryCodesFilter.includes(country.code)
+      );
+    }
+    return this._countries;
+  }
+
   setCountry(code: CountryCode, country?: Country) {
     if (!country) {
-      country = this.countries.find((country) => country.code === code);
+      country = this._countries.find((country) => country.code === code);
     }
     this.selectedCountry = country;
     this.countries = countries;

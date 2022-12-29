@@ -14,6 +14,7 @@
 
   <div class="dropdown" [ngClass]="{ show: showList }">
     <input
+      *ngIf="searchable"
       type="search"
       class="search"
       autocomplete="off"
@@ -30,6 +31,7 @@
         *ngFor="let country of countries; let i = index"
         (click)="setCountry(country.code, country)"
         [tabindex]="i + 1"
+        [attr.class]="country.code | lowercase"
         [ngClass]="{ selected: selectedCountry === country }"
       >
         <img
@@ -39,7 +41,7 @@
           }}.svg"
           alt="Flag Icon"
         />
-        <span>{{ country.name }} </span>
+        <span>{{ country.name }}</span>
       </li>
     </ul>
   </div>

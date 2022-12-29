@@ -22,6 +22,8 @@ import { Country } from './country-data';
 })
 export class InternationalNumberDirective implements Validator, OnInit {
   @Input() defaultCountry?: CountryCode;
+  @Input() onlyCountries?: CountryCode[];
+  @Input() searchable?: boolean = true;
   @Input() searchPlaceHolder?: string;
   @Input() customScrollbar: boolean = true;
   @Input() hue?: string;
@@ -50,6 +52,8 @@ export class InternationalNumberDirective implements Validator, OnInit {
   }
 
   ngOnInit() {
+    this.countrySelectComponent.searchable = this.searchable;
+
     this.countrySelectComponent.searchPlaceHolder = this.searchPlaceHolder;
 
     this.countrySelectComponent.customScrollbar = this.customScrollbar;
@@ -60,6 +64,10 @@ export class InternationalNumberDirective implements Validator, OnInit {
 
     if (this.defaultCountry) {
       this.countrySelectComponent.setCountry(this.defaultCountry);
+    }
+
+    if (this.onlyCountries) {
+      this.countrySelectComponent.countryCodesFilter = this.onlyCountries;
     }
   }
 
