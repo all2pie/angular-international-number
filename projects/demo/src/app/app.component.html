@@ -11,10 +11,12 @@
       defaultCountry="PK"
       placeholder="+923114444444"
       (countrySelected)="countryChanged($event)"
+      required
     />
 
     <code>
       Value: {{ fg.value | json }} <br />
+      Errors: {{ fg.controls.phoneNumber.errors | json }} <br />
       Is Form Valid?:
       <span [ngStyle]="{ color: fg?.valid ? 'green' : 'red' }">{{
         fg?.valid

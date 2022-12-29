@@ -68,32 +68,30 @@ export class InternationalNumberDirective implements Validator, OnInit {
 
     const validationError = { invalidPhoneNumber: true };
 
-    if (!control.value) {
-      return validationError;
-    }
+    if (control.value) {
+      try {
+        const number = parsePhoneNumber(
+          control.value,
+          this.countrySelectComponent.selectedCountry?.code
+        );
 
-    try {
-      const number = parsePhoneNumber(
-        control.value,
-        this.countrySelectComponent.selectedCountry?.code
-      );
+        if (
+          number.country &&
+          this.countrySelectComponent.selectedCountry?.code !== number.country
+        ) {
+          this.countrySelectComponent.setCountry(number.country);
+        }
 
-      if (
-        number.country &&
-        this.countrySelectComponent.selectedCountry?.code !== number.country
-      ) {
-        this.countrySelectComponent.setCountry(number.country);
-      }
+        if (number.number && control.value !== number.number) {
+          control.setValue(number.number);
+        }
 
-      if (number.number && control.value !== number.number) {
-        control.setValue(number.number);
-      }
-
-      if (!number.isValid()) {
+        if (!number.isValid()) {
+          return validationError;
+        }
+      } catch (error) {
         return validationError;
       }
-    } catch (error) {
-      return validationError;
     }
 
     return null;
