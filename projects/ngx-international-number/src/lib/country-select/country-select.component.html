@@ -1,13 +1,6 @@
 <div class="country-select" [ngClass]="{ 'dropdown-open': showList }">
   <div class="country-select-btn" (click)="toggleDropdown()">
-    <img
-      class="flag"
-      *ngIf="selectedCountry"
-      src="https://purecatamphetamine.github.io/country-flag-icons/3x2/{{
-        selectedCountry.code
-      }}.svg"
-      alt="Flag Icon"
-    />
+    <span *ngIf="selectedCountry" class="flag">{{ selectedCountry.emoji }}</span>
     <span *ngIf="!selectedCountry" class="placeholder-flag"></span>
     <span class="arrow">{{ showList ? "▲" : "▼" }}</span>
   </div>
@@ -34,14 +27,8 @@
         [attr.class]="country.code | lowercase"
         [ngClass]="{ selected: selectedCountry === country }"
       >
-        <img
-          class="flag"
-          src="https://purecatamphetamine.github.io/country-flag-icons/3x2/{{
-            country.code
-          }}.svg"
-          alt="Flag Icon"
-        />
-        <span>{{ country.name }}</span>
+        <span class="flag">{{ country.emoji }}</span>
+        <span class="name">{{ country.name }} </span>
       </li>
     </ul>
   </div>
