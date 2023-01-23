@@ -1,15 +1,15 @@
 <div class="container">
   <h1>DEMO</h1>
 
-  <h3>ngx-international-number</h3>
+  <h3>ngx-intl-phone-number</h3>
 
   <form [formGroup]="fg">
     <input
       type="tel"
       formControlName="phoneNumber"
-      international-number
-      defaultCountry="PK"
-      placeholder="+923114444444"
+      intl-phone-number
+      defaultCountry="PL"
+      placeholder="+48570881997"
       (countrySelected)="countryChanged($event)"
       required
     />

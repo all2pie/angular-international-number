@@ -1,34 +1,34 @@
 import {
+  ComponentFactory,
   ComponentFactoryResolver,
   EventEmitter,
   Output,
   ViewContainerRef,
 } from '@angular/core';
 import { Directive, ElementRef, Input, OnInit } from '@angular/core';
-import { CountryCode, parsePhoneNumber } from 'libphonenumber-js/mobile';
+import { CountryCode, parsePhoneNumber, PhoneNumber } from 'libphonenumber-js/mobile';
 import { AbstractControl, NG_VALIDATORS, Validator } from '@angular/forms';
 import { CountrySelectComponent } from './country-select/country-select.component';
 import { Country } from './country-data';
 
 @Directive({
-  selector: '[international-number]',
+  selector: '[intl-phone-number]',
   providers: [
     {
       provide: NG_VALIDATORS,
-      useExisting: InternationalNumberDirective,
+      useExisting: NgxInternationalPhoneNumberDirective,
       multi: true,
     },
   ],
 })
-export class InternationalNumberDirective implements Validator, OnInit {
+export class NgxInternationalPhoneNumberDirective implements Validator, OnInit {
   @Input() defaultCountry?: CountryCode;
   @Input() onlyCountries?: CountryCode[];
   @Input() searchable?: boolean = true;
   @Input() searchPlaceHolder?: string;
   @Input() customScrollbar: boolean = true;
-  @Input() hue?: string;
   @Output() countrySelected = new EventEmitter<Country>();
-  @Output() dropdownOpened = new EventEmitter<Boolean>();
+  @Output() dropdownOpened = new EventEmitter<boolean>();
   private countrySelectComponent: CountrySelectComponent;
   public control?: AbstractControl;
 
@@ -37,7 +37,7 @@ export class InternationalNumberDirective implements Validator, OnInit {
     view: ViewContainerRef,
     factoryResolver: ComponentFactoryResolver
   ) {
-    const compFactory = factoryResolver.resolveComponentFactory(
+    const compFactory: ComponentFactory<CountrySelectComponent> = factoryResolver.resolveComponentFactory(
       CountrySelectComponent
     );
 
@@ -58,10 +58,6 @@ export class InternationalNumberDirective implements Validator, OnInit {
 
     this.countrySelectComponent.customScrollbar = this.customScrollbar;
 
-    if (this.hue) {
-      document.documentElement.style.setProperty('--hue', this.hue);
-    }
-
     if (this.defaultCountry) {
       this.countrySelectComponent.setCountry(this.defaultCountry);
     }
@@ -74,11 +70,9 @@ export class InternationalNumberDirective implements Validator, OnInit {
   validate(control: AbstractControl) {
     this.control = control;
 
-    const validationError = { invalidPhoneNumber: true };
-
     if (control.value) {
       try {
-        const number = parsePhoneNumber(
+        const number: PhoneNumber = parsePhoneNumber(
           control.value,
           this.countrySelectComponent.selectedCountry?.code
         );
@@ -95,10 +89,10 @@ export class InternationalNumberDirective implements Validator, OnInit {
         }
 
         if (!number.isValid()) {
-          return validationError;
+          return { invalidPhoneNumber: true };
         }
       } catch (error) {
-        return validationError;
+        return { invalidPhoneNumber: true };
       }
     }
 

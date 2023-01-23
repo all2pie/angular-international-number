@@ -1,13 +1,13 @@
 {
-  "name": "angular-international-phone-number",
+  "name": "angular-intl-phone-number",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve demo",
-    "watch": "ng build ngx-international-number --watch ",
-    "build": "ng build ngx-international-number",
-    "publish": "npm run build && cd dist/ngx-international-number/ && npm publish",
-    "deploy": "ng deploy --base-href=/angular-international-number/",
+    "watch": "ng build ngx-intl-phone-number --watch ",
+    "build": "ng build ngx-intl-phone-number",
+    "publish": "npm run build && cd dist/ngx-intl-phone-number/ && npm publish",
+    "deploy": "ng deploy --base-href=/angular-intl-phone-number/",
     "test": "ng test"
   },
   "private": true,

@@ -1,8 +1,8 @@
 {
-  "name": "ngx-international-number",
-  "version": "1.1.0",
-  "author": "Muhammad Haris",
-  "description": "International Phone Number Validation for Angular using Directive",
+  "name": "ngx-intl-phone-number",
+  "version": "1.2.0",
+  "author": "Paweł Klockiewicz",
+  "description": "International phone number validation for Angular using directive.",
   "keywords": [
     "Angular",
     "Phone Number",
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/all2pie/angular-international-number"
+    "url": "https://github.com/klocus/angular-international-number"
   },
   "license": "MIT",
   "peerDependencies": {
@@ -20,9 +20,6 @@
     "libphonenumber-js": "^1.9.34"
   },
   "dependencies": {
-    "libphonenumber-js": "^1.9.34"
-  },
-  "devDependencies": {
     "libphonenumber-js": "^1.9.34"
   }
 }

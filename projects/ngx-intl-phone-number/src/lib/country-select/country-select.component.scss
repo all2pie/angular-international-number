@@ -1,9 +1,3 @@
-:root {
-  --hue: 212;
-}
-
-$hue: var(--hue);
-
 .country-select {
   position: relative;
 
@@ -17,10 +11,6 @@ $hue: var(--hue);
     bottom: 0;
     cursor: pointer;
     backdrop-filter: contrast(0.9);
-
-    // &:hover {
-    //   background-color: #f2f2f2;
-    // }
 
     .placeholder-flag {
       width: 24px;
@@ -37,23 +27,14 @@ $hue: var(--hue);
       padding-inline-start: 8px;
       font-size: 12px;
       color: gray;
-      // height: 0;
-      // border-left: 3px solid transparent;
-      // border-right: 3px solid transparent;
-      // border-top: 4px solid #555;
     }
-
-    // .arrow-up {
-    //   border-top: none;
-    //   border-bottom: 4px solid #555;
-    // }
   }
 
   .dropdown {
     display: none;
     z-index: 15;
     background: white;
-    border: 1px solid hsl($hue, 100%, 95%);
+    border: 1px solid hsl(212, 100%, 95%);
     position: absolute;
     max-width: 100vw;
     top: 100%;
@@ -66,8 +47,7 @@ $hue: var(--hue);
       width: calc(100% - 24px);
       margin: 12px;
       font-size: 14px;
-      background: hsl($hue, 100%, 95%);
-      // border: 1px solid hsl($hue, 100%, 95%);
+      background: hsl(212, 100%, 95%);
       border: none;
       padding: 4px 12px;
       outline: none;
@@ -82,8 +62,8 @@ $hue: var(--hue);
     .countries-list {
       max-height: 300px;
       z-index: 5;
-      border: 1px solid hsl($hue, 100%, 95%);
-      box-shadow: 0 8px 21px 0 hsla($hue, 34%, 80%, 0.75);
+      border: 1px solid hsl(212, 100%, 95%);
+      box-shadow: 0 8px 21px 0 hsla(212, 34%, 80%, 0.75);
       overflow-y: scroll;
       list-style: none;
       padding: 0;
@@ -98,7 +78,7 @@ $hue: var(--hue);
 
         &:hover,
         &.selected {
-          background-color: hsl($hue, 62%, 96%);
+          background-color: hsl(212, 62%, 96%);
         }
 
         .flag {
@@ -117,11 +97,11 @@ $hue: var(--hue);
           width: auto;
         }
         &::-webkit-scrollbar-thumb {
-          background: hsl($hue, 35%, 67%);
+          background: hsl(212, 35%, 67%);
           border-radius: 4px;
         }
         &::-webkit-scrollbar-track {
-          background: hsl($hue, 100%, 98%);
+          background: hsl(212, 100%, 98%);
         }
       }
     }

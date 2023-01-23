@@ -12,9 +12,9 @@
     "declaration": false,
     "downlevelIteration": true,
     "paths": {
-      "ngx-international-number": [
-        "dist/ngx-international-number/ngx-international-number",
-        "dist/ngx-international-number"
+      "ngx-intl-phone-number": [
+        "dist/ngx-intl-phone-number/ngx-intl-phone-number",
+        "dist/ngx-intl-phone-number"
       ],
       "libphonenumber-js": [
         "./node_modules/libphonenumber-js"

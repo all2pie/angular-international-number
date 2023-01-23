@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-international-number": {
+    "ngx-intl-phone-number": {
       "projectType": "library",
-      "root": "projects/ngx-international-number",
-      "sourceRoot": "projects/ngx-international-number/src",
+      "root": "projects/ngx-intl-phone-number",
+      "sourceRoot": "projects/ngx-intl-phone-number/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/ngx-international-number/ng-package.json"
+            "project": "projects/ngx-intl-phone-number/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ngx-international-number/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ngx-intl-phone-number/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ngx-international-number/tsconfig.lib.json"
+              "tsConfig": "projects/ngx-intl-phone-number/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,9 +27,9 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ngx-international-number/src/test.ts",
-            "tsConfig": "projects/ngx-international-number/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-international-number/karma.conf.js"
+            "main": "projects/ngx-intl-phone-number/src/test.ts",
+            "tsConfig": "projects/ngx-intl-phone-number/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-intl-phone-number/karma.conf.js"
           }
         }
       }
