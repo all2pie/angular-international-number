@@ -1,11 +1,11 @@
 # Intro
 
-This library is for International Phone Number Validation for Angular using Directive.
+This library is for International Phone Number Validation for Angular using Directive. Based on [that](https://github.com/all2pie/angular-international-number) project.
 It supports both Template driven and Reactive Forms.
 
 [libphonenumber-js](https://www.npmjs.com/package/libphonenumber-js) is used for the Phone Number validation.
 
-[Demo](https://all2pie.github.io/angular-international-number/)
+[Demo](https://klocus.github.io/angular-intl-phone-number/)
 
 # Usage
 
@@ -24,32 +24,32 @@ It supports both Template driven and Reactive Forms.
 
 3. Add the Directive to you Phone Number Input like this:
 
-   ```ts
+   ```html
    <input
     type="tel"
     formControlName="phoneNumber"
-    international-number
-    defaultCountry="PK"
+    intl-phone-number
+    defaultCountry="PL"
     (countrySelected)="countryChanged($event)"/>
    ```
 
 ## Inputs
 
-| Name              | Type      | Default | Description                                                                                
-|-------------------|-----------|---------|--------------------------------------------------------------------------------------------|
-| searchable        | boolean?  | true    | Allow to search for country                                                                |
-| searchPlaceHolder | string?   | null    | The Placeholder for the search input                                                       |
-| defaultCountry    | string?   | null    | [Alpha 2 Country Code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)                   |
-| onlyCountries     | string[]? | []      | List of manually selected countries, which will appear in the dropdown                     |
+| Name              | Type      | Default | Description                                                                                  |
+|-------------------|-----------|---------|----------------------------------------------------------------------------------------------|
+| searchable        | boolean?  | true    | Allow to search for country                                                                  |
+| searchPlaceHolder | string?   | null    | The Placeholder for the search input                                                         |
+| defaultCountry    | string?   | null    | [Alpha 2 Country Code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)                     |
+| onlyCountries     | string[]? | []      | List of manually selected countries, which will appear in the dropdown                       |
 | hue               | string?   | 212     | [HSL color](https://www.w3schools.com/colors/colors_hsl.asp) Hue value for customizing theme |
-| customScrollbar   | boolean?  | true    | Use false to disable theming for scrollbar                                                 |
+| customScrollbar   | boolean?  | true    | Use false to disable theming for scrollbar                                                   |
 
 ## Outputs
 
-| Name              | Parameters                     | Description
-| ----------------- | ------------------------------ | ---------------------------------------------------------------------------------- |
-| countrySelected   | country: Country               | Emits whenever there is a change in country selected including the default country |
-| dropdownOpened    | didOpen: boolean               | Emits whenever dropdown is toggled                                                 |
+| Name            | Parameters       | Description                                                                        |
+|-----------------|------------------|------------------------------------------------------------------------------------|
+| countrySelected | country: Country | Emits whenever there is a change in country selected including the default country |
+| dropdownOpened  | didOpen: boolean | Emits whenever dropdown is toggled                                                 |
 
 ## Styling
 
