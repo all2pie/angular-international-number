@@ -11,7 +11,7 @@ It supports both Template driven and Reactive Forms.
 
 1. `npm i ngx-intl-phone-number`
 
-2. Add **InternationalPhoneModule** import to your **NgModule** (where the directive is used) like this:
+2. Add **NgxIntlPhoneNumberModule** import to your **NgModule** like this:
 
    ```ts
    import { NgxIntlPhoneNumberModule } from "ngx-intl-phone-number";
@@ -55,7 +55,5 @@ It supports both Template driven and Reactive Forms.
 * `dropdown-open` class is added on the root element of country select when dropdown is open for custom styling
 
 # Sources
-
-Flags used are from this [Package](https://www.npmjs.com/package/country-flag-icons)
 
 The Countries Data was copied form this [Github Repo](https://gist.github.com/keeguon/2310008)

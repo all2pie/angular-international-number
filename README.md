@@ -56,6 +56,4 @@ It supports both Template driven and Reactive Forms.
 
 # Sources
 
-Flags used are from this [Package](https://www.npmjs.com/package/country-flag-icons)
-
 The Countries Data was copied form this [Github Repo](https://gist.github.com/keeguon/2310008)
