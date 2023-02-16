@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 import { countries, Country } from '../country-data';
 import { CountryCode } from 'libphonenumber-js';
-import { NgxInternationalPhoneNumberDirective } from '../ngx-intl-phone-number.directive';
+import { NgxIntlPhoneNumberDirective } from '../ngx-intl-phone-number.directive';
 
 @Component({
   selector: 'app-country-select',
@@ -27,7 +27,7 @@ export class CountrySelectComponent implements OnInit {
   public searchable?: boolean;
   public searchPlaceHolder?: string;
 
-  public directiveRef?: NgxInternationalPhoneNumberDirective;
+  public directiveRef?: NgxIntlPhoneNumberDirective;
 
   constructor(private ref: ElementRef) {}
 

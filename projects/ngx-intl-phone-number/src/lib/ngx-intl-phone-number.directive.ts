@@ -16,12 +16,12 @@ import { Country } from './country-data';
   providers: [
     {
       provide: NG_VALIDATORS,
-      useExisting: NgxInternationalPhoneNumberDirective,
+      useExisting: NgxIntlPhoneNumberDirective,
       multi: true,
     },
   ],
 })
-export class NgxInternationalPhoneNumberDirective implements Validator, OnInit {
+export class NgxIntlPhoneNumberDirective implements Validator, OnInit {
   @Input() defaultCountry?: CountryCode;
   @Input() onlyCountries?: CountryCode[];
   @Input() searchable?: boolean = true;

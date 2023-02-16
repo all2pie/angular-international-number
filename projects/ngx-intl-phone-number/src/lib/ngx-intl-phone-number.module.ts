@@ -2,12 +2,12 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CountrySelectComponent } from './country-select/country-select.component';
-import { NgxInternationalPhoneNumberDirective } from './ngx-intl-phone-number.directive';
+import { NgxIntlPhoneNumberDirective } from './ngx-intl-phone-number.directive';
 
 @NgModule({
-  declarations: [ CountrySelectComponent, NgxInternationalPhoneNumberDirective ],
+  declarations: [ CountrySelectComponent, NgxIntlPhoneNumberDirective ],
   imports: [ CommonModule, FormsModule ],
   providers: [],
-  exports: [ NgxInternationalPhoneNumberDirective ],
+  exports: [ NgxIntlPhoneNumberDirective ],
 })
-export class NgxInternationalPhoneNumberModule {}
+export class NgxIntlPhoneNumberModule {}
