@@ -1,6 +1,6 @@
 {
   "name": "ngx-intl-phone-number",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "author": "Paweł Klockiewicz",
   "description": "International phone number validation for Angular using directive.",
   "keywords": [
