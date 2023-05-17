@@ -41,7 +41,7 @@ It supports both Template driven and Reactive Forms.
 | searchPlaceHolder | string?   | null    | The Placeholder for the search input                                                         |
 | defaultCountry    | string?   | null    | [Alpha 2 Country Code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)                     |
 | onlyCountries     | string[]? | []      | List of manually selected countries, which will appear in the dropdown                       |
-| customScrollbar   | boolean?  | true    | Use false to disable theming for scrollbar                                                   |
+| separateDialCode  | boolean?  | false   | Use to display dial code next to the flag                                                    |
 
 ## Outputs
 

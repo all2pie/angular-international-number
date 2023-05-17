@@ -2,7 +2,7 @@
   <div class="country-select-btn" (click)="toggleDropdown()">
     <ng-container *ngIf="selectedCountry">
       <span class="flag">{{ selectedCountry.emoji }}</span>
-      <span class="prefix">+{{ selectedCountry.prefix }}</span>
+      <span *ngIf="separateDialCode" class="dial-code">+{{ selectedCountry.dialCode }}</span>
     </ng-container>
     <span *ngIf="!selectedCountry" class="placeholder-flag"></span>
     <span class="arrow">{{ showList ? "▲" : "▼" }}</span>
@@ -19,21 +19,18 @@
       (ngModelChange)="filterCountries($event)"
       autofocus
     />
-    <ul
-      class="countries-list"
-      [ngClass]="{ 'custom-scrollbar': customScrollbar }"
-    >
+    <ul class="countries-list">
       <li
         *ngFor="let country of countries; let i = index"
         (click)="setCountry(country.code, country)"
         [tabindex]="i + 1"
         [ngClass]="{ selected: selectedCountry === country }"
         [attr.data-code]="country.code"
-        [attr.data-prefix]="country.prefix"
+        [attr.data-dial]="country.dialCode"
       >
         <span class="flag">{{ country.emoji }}</span>
         <span class="name">{{ country.name }} </span>
-        <span class="prefix">+{{ country.prefix }}</span>
+        <span class="dial-code">+{{ country.dialCode }}</span>
       </li>
     </ul>
   </div>

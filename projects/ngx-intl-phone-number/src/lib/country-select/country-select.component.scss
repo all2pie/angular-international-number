@@ -4,7 +4,6 @@
   .country-select-btn {
     display: flex;
     align-items: center;
-    width: 86px;
     position: absolute;
     padding-inline-start: 12px;
     padding-inline-end: 6px;
@@ -24,7 +23,7 @@
       line-height: 1;
     }
 
-    .prefix {
+    .dial-code {
       width: 34px;
       margin-inline-start: 8px;
     }
@@ -97,29 +96,23 @@
           margin-bottom: 3px;
         }
 
-        .prefix {
+        .dial-code {
           margin-inline-start: 8px;
           opacity: 0.5;
-        }
-      }
-
-      &.custom-scrollbar {
-        &::-webkit-scrollbar {
-          width: auto;
-        }
-        &::-webkit-scrollbar-thumb {
-          background: hsl(212, 35%, 67%);
-          border-radius: 4px;
-        }
-        &::-webkit-scrollbar-track {
-          background: hsl(212, 100%, 98%);
         }
       }
     }
   }
 
   > input {
-    // Left Padding (12px) + Flag (24px) + Margin (8px) + Prefix (34px) + Margin (8px) + Arrow (12px) + Right Padding (6px) + 4px Buffer
-    padding-inline-start: 108px !important;
+    // Left Padding (12px) + Flag (24px) + Margin (8px) + Arrow (12px) + Right Padding (6px) + 4px Buffer
+    padding-inline-start: 66px !important;
+  }
+
+  &:has(.country-select-btn > .dial-code) {
+    > input {
+      // Left Padding (12px) + Flag (24px) + Margin (8px) + DialCode (34px) + Margin (8px) + Arrow (12px) + Right Padding (6px) + 4px Buffer
+      padding-inline-start: 108px !important;
+    }
   }
 }

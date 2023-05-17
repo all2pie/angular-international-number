@@ -20,9 +20,9 @@ import { NgxIntlPhoneNumberDirective } from '../ngx-intl-phone-number.directive'
 export class CountrySelectComponent implements OnInit {
   public selectedCountry?: Country;
   public showList: boolean = false;
-  public customScrollbar: boolean = true;
   private _countries: Country[] = countries;
   public countryCodesFilter: CountryCode[] = [];
+  public separateDialCode?: boolean;
   public search: string = '';
   public searchable?: boolean;
   public searchPlaceHolder?: string;

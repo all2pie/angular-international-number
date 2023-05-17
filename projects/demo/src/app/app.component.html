@@ -9,6 +9,7 @@
       formControlName="phoneNumber"
       intl-phone-number
       defaultCountry="PL"
+      [separateDialCode]="true"
       placeholder="+48570881997"
       (countrySelected)="countryChanged($event)"
       required

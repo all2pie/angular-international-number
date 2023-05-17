@@ -24,9 +24,9 @@ import { Country } from './country-data';
 export class NgxIntlPhoneNumberDirective implements Validator, OnInit {
   @Input() defaultCountry?: CountryCode;
   @Input() onlyCountries?: CountryCode[];
-  @Input() searchable?: boolean = true;
+  @Input() separateDialCode: boolean = false;
+  @Input() searchable: boolean = true;
   @Input() searchPlaceHolder?: string;
-  @Input() customScrollbar: boolean = true;
   @Output() countrySelected = new EventEmitter<Country>();
   @Output() dropdownOpened = new EventEmitter<boolean>();
   private countrySelectComponent: CountrySelectComponent;
@@ -52,11 +52,9 @@ export class NgxIntlPhoneNumberDirective implements Validator, OnInit {
   }
 
   ngOnInit() {
+    this.countrySelectComponent.separateDialCode = this.separateDialCode;
     this.countrySelectComponent.searchable = this.searchable;
-
     this.countrySelectComponent.searchPlaceHolder = this.searchPlaceHolder;
-
-    this.countrySelectComponent.customScrollbar = this.customScrollbar;
 
     if (this.defaultCountry) {
       this.countrySelectComponent.setCountry(this.defaultCountry);
@@ -77,15 +75,19 @@ export class NgxIntlPhoneNumberDirective implements Validator, OnInit {
           this.countrySelectComponent.selectedCountry?.code
         );
 
-        if (
-          number.country &&
-          this.countrySelectComponent.selectedCountry?.code !== number.country
-        ) {
+        if (number.country && this.countrySelectComponent.selectedCountry?.code !== number.country) {
           this.countrySelectComponent.setCountry(number.country);
         }
 
-        if (number.number && control.value !== number.number) {
-          control.setValue(number.number);
+        if (this.separateDialCode) {
+          if (number.nationalNumber && control.value !== number.nationalNumber) {
+            control.setValue(number.nationalNumber);
+          }
+        }
+        else {
+          if (number.number && control.value !== number.number) {
+            control.setValue(number.number);
+          }
         }
 
         if (!number.isValid()) {
