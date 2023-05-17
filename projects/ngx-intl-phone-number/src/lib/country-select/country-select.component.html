@@ -1,6 +1,9 @@
 <div class="country-select" [ngClass]="{ 'dropdown-open': showList }">
   <div class="country-select-btn" (click)="toggleDropdown()">
-    <span *ngIf="selectedCountry" class="flag">{{ selectedCountry.emoji }}</span>
+    <ng-container *ngIf="selectedCountry">
+      <span class="flag">{{ selectedCountry.emoji }}</span>
+      <span class="prefix">+{{ selectedCountry.prefix }}</span>
+    </ng-container>
     <span *ngIf="!selectedCountry" class="placeholder-flag"></span>
     <span class="arrow">{{ showList ? "▲" : "▼" }}</span>
   </div>
@@ -24,11 +27,13 @@
         *ngFor="let country of countries; let i = index"
         (click)="setCountry(country.code, country)"
         [tabindex]="i + 1"
-        [attr.class]="country.code | lowercase"
         [ngClass]="{ selected: selectedCountry === country }"
+        [attr.data-code]="country.code"
+        [attr.data-prefix]="country.prefix"
       >
         <span class="flag">{{ country.emoji }}</span>
         <span class="name">{{ country.name }} </span>
+        <span class="prefix">+{{ country.prefix }}</span>
       </li>
     </ul>
   </div>

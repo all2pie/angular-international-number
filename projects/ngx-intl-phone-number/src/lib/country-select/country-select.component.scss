@@ -4,6 +4,7 @@
   .country-select-btn {
     display: flex;
     align-items: center;
+    width: 86px;
     position: absolute;
     padding-inline-start: 12px;
     padding-inline-end: 6px;
@@ -21,6 +22,11 @@
     .flag {
       font-size: 24px;
       line-height: 1;
+    }
+
+    .prefix {
+      width: 34px;
+      margin-inline-start: 8px;
     }
 
     .arrow {
@@ -90,6 +96,11 @@
         .name {
           margin-bottom: 3px;
         }
+
+        .prefix {
+          margin-inline-start: 8px;
+          opacity: 0.5;
+        }
       }
 
       &.custom-scrollbar {
@@ -108,6 +119,7 @@
   }
 
   > input {
-    padding-inline-start: 66px !important; // Left Padding (12px) + Flag (24px) + Margin (8px) + Arrow (12px) + Right Padding (6px) + 4px Buffer
+    // Left Padding (12px) + Flag (24px) + Margin (8px) + Prefix (34px) + Margin (8px) + Arrow (12px) + Right Padding (6px) + 4px Buffer
+    padding-inline-start: 108px !important;
   }
 }
