@@ -1,20 +1,23 @@
 <div class="container">
   <h1>DEMO</h1>
 
-  <h3>ngx-international-number</h3>
+  <h3>ngx-intl-phone-number</h3>
 
   <form [formGroup]="fg">
     <input
       type="tel"
       formControlName="phoneNumber"
-      international-number
-      defaultCountry="PK"
-      placeholder="+923114444444"
+      intl-phone-number
+      defaultCountry="PL"
+      [separateDialCode]="false"
+      placeholder="+48570881997"
       (countrySelected)="countryChanged($event)"
+      required
     />
 
     <code>
       Value: {{ fg.value | json }} <br />
+      Errors: {{ fg.controls.phoneNumber.errors | json }} <br />
       Is Form Valid?:
       <span [ngStyle]="{ color: fg?.valid ? 'green' : 'red' }">{{
         fg?.valid

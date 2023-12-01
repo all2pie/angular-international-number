@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Country } from 'ngx-international-number';
+import { Country } from 'ngx-intl-phone-number';
 
 @Component({
   selector: 'app-root',
