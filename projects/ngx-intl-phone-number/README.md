@@ -37,11 +37,12 @@ It supports both Template driven and Reactive Forms.
 
 | Name              | Type      | Default | Description                                                              |
 |-------------------|-----------|---------|--------------------------------------------------------------------------|
-| searchable        | boolean?  | true    | Allow to search for country                                              |
+| searchable        | boolean   | true    | Allow to search for country                                              |
 | searchPlaceHolder | string?   | null    | The Placeholder for the search input                                     |
 | defaultCountry    | string?   | null    | [Alpha 2 Country Code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) |
 | onlyCountries     | string[]? | []      | List of manually selected countries, which will appear in the dropdown   |
-| separateDialCode  | boolean?  | false   | Use to display dial code next to the flag                                |
+| separateDialCode  | boolean   | false   | Use to display dial code next to the flag                                |
+| strictValidation  | boolean   | false   | If true, it also validates the actual phone number digits                |
 
 ## Outputs
 

@@ -27,6 +27,7 @@ export class NgxIntlPhoneNumberDirective implements Validator, OnInit {
   @Input() separateDialCode: boolean = false;
   @Input() searchable: boolean = true;
   @Input() searchPlaceHolder?: string;
+  @Input() strictValidation: boolean = false;
   @Output() countrySelected = new EventEmitter<Country>();
   @Output() dropdownOpened = new EventEmitter<boolean>();
   private countrySelectComponent: CountrySelectComponent;
@@ -90,7 +91,7 @@ export class NgxIntlPhoneNumberDirective implements Validator, OnInit {
           }
         }
 
-        if (!number.isValid()) {
+        if ((this.strictValidation ? !number.isValid() : !number.isPossible())) {
           return { invalidPhoneNumber: true };
         }
       } catch (error) {
