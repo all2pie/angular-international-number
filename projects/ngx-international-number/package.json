@@ -7,11 +7,17 @@
     "Angular",
     "Phone Number",
     "International",
-    "Validation"
+    "Validation",
+    "Phone",
+    "Number",
+    "Mobile",
+    "Telephone",
+    "Verification",
+    "Angular 18"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/all2pie/angular-international-number"
+    "url": "git+https://github.com/all2pie/angular-international-number.git"
   },
   "license": "MIT",
   "peerDependencies": {
@@ -19,6 +25,6 @@
     "@angular/core": "^18.0.6"
   },
   "dependencies": {
-    "libphonenumber-js": "^1.9.34"
+    "libphonenumber-js": "^1.11.4"
   }
 }
