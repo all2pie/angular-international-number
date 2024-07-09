@@ -19,10 +19,10 @@ You can use your existing inputs with custom styling and just add the `internati
    @NgModule({
      imports: [NgxInternationalNumberModule],
    })
-   export class AuthModule {}
+   export class MainModule {}
    ```
 
-3. Add the Directive to you Phone Number Input like this:
+3. Add the `international-number` directive to you phone number input like this:
 
    ```html
    <input
@@ -59,5 +59,4 @@ You can use your existing inputs with custom styling and just add the `internati
 ## Sources
 
 * Flags used are from [here](https://purecatamphetamine.github.io/country-flag-icons/3x2)
-
 * Countries data was sourced form this [repo](https://gist.github.com/keeguon/2310008)
