@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Country } from 'ngx-international-number';
 
 @Component({
@@ -8,8 +8,8 @@ import { Country } from 'ngx-international-number';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public fg = new FormGroup({
-    phoneNumber: new FormControl(),
+  public fg = new UntypedFormGroup({
+    phoneNumber: new UntypedFormControl(),
   });
 
   countryChanged(country: Country) {
