@@ -11,14 +11,19 @@
       defaultCountry="PK"
       placeholder="+923114444444"
       (countrySelected)="countryChanged($event)"
+      required
     />
-
-    <code>
-      Value: {{ fg.value | json }} <br />
-      Is Form Valid?:
-      <span [ngStyle]="{ color: fg?.valid ? 'green' : 'red' }">{{
-        fg?.valid
-      }}</span>
-    </code>
   </form>
+
+  <div class="value">
+    <span>Value:</span>
+    <code> {{ fg.value | json }} </code>
+  </div>
+
+  <div class="isValid">
+    <span>Is Form Valid?: </span>
+    <code [ngStyle]="{ color: fg?.valid ? 'green' : 'red' }">{{
+      fg?.valid?.toString() | titlecase
+    }}</code>
+  </div>
 </div>

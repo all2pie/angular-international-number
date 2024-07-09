@@ -68,9 +68,7 @@ export class InternationalNumberDirective implements Validator, OnInit {
 
     const validationError = { invalidPhoneNumber: true };
 
-    if (!control.value) {
-      return validationError;
-    }
+    if (!control.value) return null;
 
     try {
       const number = parsePhoneNumber(

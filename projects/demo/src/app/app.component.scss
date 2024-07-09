@@ -16,9 +16,14 @@ h1 {
   color: #133089;
 }
 
+form {
+  margin-top: 55px;
+  margin-bottom: 18px;
+}
+
 input {
   height: 32px;
-  width: 40vw;
+  width: 30vw;
   border-radius: 6px;
   border: 1px solid hsl(212, 100%, 95%);
   outline: 0;
@@ -28,7 +33,20 @@ input {
   }
 }
 
-code {
-  display: block;
-  margin-top: 18px;
+.value {
+  margin: 18px 0;
+  font-size: 16px;
+
+  span {
+    font-weight: bold;
+  }
+}
+
+.isValid {
+  font-size: 16px;
+  font-weight: bold;
+
+  code {
+    font-size: 20px;
+  }
 }
